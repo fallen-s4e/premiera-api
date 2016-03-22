@@ -1,0 +1,141 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="GetHallPlanResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="Result"/>
+                <xs:element type="xs:string" name="Error"/>
+                <xs:element type="xs:string" name="Remark"/>
+                <xs:element name="Data">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Session">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Theatre">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Hall">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Levels">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="Level" maxOccurs="unbounded" minOccurs="0">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Background">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="Color">
+                                                                                                        <xs:complexType>
+                                                                                                            <xs:simpleContent>
+                                                                                                                <xs:extension base="xs:int">
+                                                                                                                    <xs:attribute type="xs:short" name="R" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:short" name="G" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:short" name="B" use="optional"/>
+                                                                                                                </xs:extension>
+                                                                                                            </xs:simpleContent>
+                                                                                                        </xs:complexType>
+                                                                                                    </xs:element>
+                                                                                                </xs:sequence>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="Objects">
+                                                                                            <xs:complexType mixed="true">
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="Object" maxOccurs="unbounded" minOccurs="0">
+                                                                                                        <xs:complexType>
+                                                                                                            <xs:sequence>
+                                                                                                                <xs:element type="xs:string" name="Name"/>
+                                                                                                                <xs:element name="Color">
+                                                                                                                    <xs:complexType>
+                                                                                                                        <xs:simpleContent>
+                                                                                                                            <xs:extension base="xs:int">
+                                                                                                                                <xs:attribute type="xs:short" name="R" use="optional"/>
+                                                                                                                                <xs:attribute type="xs:short" name="G" use="optional"/>
+                                                                                                                                <xs:attribute type="xs:short" name="B" use="optional"/>
+                                                                                                                            </xs:extension>
+                                                                                                                        </xs:simpleContent>
+                                                                                                                    </xs:complexType>
+                                                                                                                </xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                            <xs:attribute type="xs:short" name="X" use="optional"/>
+                                                                                                            <xs:attribute type="xs:short" name="Y" use="optional"/>
+                                                                                                            <xs:attribute type="xs:short" name="Width" use="optional"/>
+                                                                                                            <xs:attribute type="xs:integer" name="Height" use="optional"/>
+                                                                                                        </xs:complexType>
+                                                                                                    </xs:element>
+                                                                                                </xs:sequence>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                        <xs:element name="Places">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="Place" maxOccurs="unbounded" minOccurs="0">
+                                                                                                        <xs:complexType>
+                                                                                                            <xs:simpleContent>
+                                                                                                                <xs:extension base="xs:string">
+                                                                                                                    <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Fragment" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Row" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Place" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:short" name="X" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:short" name="Y" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Width" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Height" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Type" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Status" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Reservation" use="optional"/>
+                                                                                                                    <xs:attribute type="xs:integer" name="Sale" use="optional"/>
+                                                                                                                </xs:extension>
+                                                                                                            </xs:simpleContent>
+                                                                                                        </xs:complexType>
+                                                                                                    </xs:element>
+                                                                                                </xs:sequence>
+                                                                                                <xs:attribute type="xs:integer" name="PlacesCount" use="optional"/>
+                                                                                                <xs:attribute type="xs:integer" name="PlacesLimit" use="optional"/>
+                                                                                                <xs:attribute type="xs:short" name="Width" use="optional"/>
+                                                                                                <xs:attribute type="xs:short" name="Height" use="optional"/>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                                                                                    <xs:attribute type="xs:integer" name="Reservation" use="optional"/>
+                                                                                    <xs:attribute type="xs:integer" name="Sale" use="optional"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute type="xs:integer" name="ID"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:integer" name="ID"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Movie">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute type="xs:integer" name="ID"/>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element type="xs:string" name="Date"/>
+                                        <xs:element type="xs:string" name="Time"/>
+                                    </xs:sequence>
+                                    <xs:attribute type="xs:integer" name="ID"/>
+                                    <xs:attribute type="xs:integer" name="Geometry"/>
+                                    <xs:attribute type="xs:integer" name="ShowBusyPlaces"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,66 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="GetHallsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="Result"/>
+                <xs:element type="xs:string" name="Error"/>
+                <xs:element type="xs:string" name="Remark"/>
+                <xs:element name="Data">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Theatres">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Theatre" maxOccurs="unbounded" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Name"/>
+                                                    <xs:element type="xs:string" name="NameFull"/>
+                                                    <xs:element type="xs:string" name="Remark"/>
+                                                    <xs:element type="xs:string" name="Address"/>
+                                                    <xs:element name="Halls">
+                                                        <xs:complexType mixed="true">
+                                                            <xs:sequence>
+                                                                <xs:element name="Hall" maxOccurs="unbounded" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="Name"/>
+                                                                            <xs:element name="Levels">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="Level" maxOccurs="unbounded" minOccurs="0">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element type="xs:string" name="Name"/>
+                                                                                                </xs:sequence>
+                                                                                                <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                                                                                                <xs:attribute type="xs:integer" name="Geometry" use="optional"/>
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute type="xs:integer" name="Count" use="optional"/>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                        <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute type="xs:integer" name="Count" use="optional"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute type="xs:integer" name="ID" use="optional"/>
+                                                <xs:attribute type="xs:integer" name="ShowBusyPlaces" use="optional"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
